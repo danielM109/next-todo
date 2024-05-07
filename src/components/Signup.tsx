@@ -5,7 +5,7 @@ import { Link } from '@nextui-org/react'
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function Login() {
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");

@@ -2,22 +2,15 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "../../../lib/db";
-import ImgFondo from "@/components/ImgFondo";
+import ImgFondo from "@/components/imgFondo";
 
 import Link from 'next/link';
 import * as actions from '@/actions';
-import { EditIcon } from "@/UI/EditIcon";
-import { DeleteIcon } from "@/UI/DeleteIcon";
+import { EditIcon } from "@/ui/editIcon";
+import { DeleteIcon } from "@/ui/deleteIcon";
 // import {DeleteIcon} from "./DeleteIcon";
 // import {columns, users} from "./data";
 import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Input,
-  Button,
-  Avatar,
   Popover,
   PopoverTrigger,
   PopoverContent,

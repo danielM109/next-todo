@@ -1,11 +1,11 @@
 'use client';
 
-import Input from "@/UI/Input"; 
+import Input from "@/ui/input"; 
 
 import { useFormState } from 'react-dom';
 import * as actions from '@/actions';
 import ImgFondo from "@/components/ImgFondo";
-import Header from "@/components/header";
+// import Header from "@/components/header";
 
 
 export default function TodolistCreatePage() {

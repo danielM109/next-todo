@@ -3,9 +3,9 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "../../../../../lib/db";
-import TodolistEditForm from '@/components/todo-edit-form'; 
+import TodolistEditForm from '@/components/todoEditForm'; 
 import ImgFondo from '@/components/ImgFondo';
-import Header from '@/components/header';
+// import Header from '@/components/header';
 
 interface TodolistEditPageProps {
   params: {

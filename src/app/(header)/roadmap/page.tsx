@@ -3,10 +3,10 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "../../../../lib/db";
-import * as actions from '@/actions';
+// import * as actions from '@/actions';
 import ImgFondo from '@/components/ImgFondo';
 import { TodoProps } from '../page';
-import Header from '@/components/header';
+// import Header from '@/components/header';
 
 type NameId = {
   name: string,
