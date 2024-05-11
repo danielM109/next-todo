@@ -13,6 +13,9 @@ type NameId = {
   id: string
 }
 
+const today = new Date();
+today.setDate(today.getDate() - 2);
+
 export default async function Roadmap() {
   // const todolists = await db.todolist.findMany();
   const supabase = createServerComponentClient({ cookies });
@@ -32,9 +35,8 @@ export default async function Roadmap() {
   const thisMonthList: NameId[] = [];
   const laterList: NameId[] = []
   const doneList: NameId[] = [];
-  const otherList: NameId[] = [];
 
-  todolists.map(({name, id, when}) => {
+  todolists.map(({name, id, when, date}) => {
     if (when === 'Today') {
       todayList.push({name, id});
     } else if (when === 'Tomorrow') {
@@ -47,10 +49,8 @@ export default async function Roadmap() {
       thisMonthList.push({name, id});
     } else if (when === 'Later') {
       laterList.push({name, id});
-    } else if (when === 'Done') {
+    } else if (when === 'Done' && new Date(date)>=today) {
       doneList.push({name, id});
-    } else {
-      otherList.push({name, id});
     }
   })
 
@@ -62,7 +62,6 @@ export default async function Roadmap() {
     thisMonthList.length,
     laterList.length,
     doneList.length,
-    otherList.length
   );
   const arrList = [];
   for (let i=0; i<maxList; i++){
@@ -103,14 +102,7 @@ export default async function Roadmap() {
     for (let i=0; i<=maxList; i++) {
       doneList.push({name: '', id: '0'});
     }
-  }
-  if (otherList.length < maxList) {
-    for (let i=0; i<=maxList; i++) {
-      otherList.push({name: '', id: '0'});
-    }
-  }
-
-  
+  }  
 
   const renderedTodolists =  arrList.map((i) =>
     // return (
@@ -122,7 +114,6 @@ export default async function Roadmap() {
         <th key={todayList[i].id+todayList[i].name}><Link href={`/todo/${thisMonthList[i].id}`}>{thisMonthList[i].name}</Link></th>
         <th key={todayList[i].id+todayList[i].name}><Link href={`/todo/${laterList[i].id}`}>{laterList[i].name}</Link></th>
         <th key={todayList[i].id+todayList[i].name}><Link href={`/todo/${doneList[i].id}`}>{doneList[i].name}</Link></th>
-        <th key={todayList[i].id+todayList[i].name}><Link href={`/todo/${otherList[i].id}`}>{otherList[i].name}</Link></th>
       </tr>
     )  
 
@@ -130,9 +121,9 @@ export default async function Roadmap() {
     <div>      
       {/* <Header/>  */}
       <ImgFondo/>
-      <div className="relative top-5">
+      <div className="relative top-5 overflow-x-auto">
         <div>
-          <table className='bg-white'>
+          <table className='min-w-full bg-white'>
             <thead className="head-table">
               <tr>
                 <th className="font-bold m-5 p-3 text-lg">Today</th>
@@ -142,7 +133,6 @@ export default async function Roadmap() {
                 <th className="font-bold m-5 p-3 text-lg">This Month</th>
                 <th className="font-bold m-5 p-3 text-lg">Later</th>
                 <th className="font-bold m-5 p-3 text-lg">Done</th>
-                <th className="font-bold m-5 p-3 text-lg">Other</th>
               </tr>
             </thead>
             <tbody className="relative bg-white ">
