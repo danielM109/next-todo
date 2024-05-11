@@ -1,4 +1,4 @@
-import SignUp from "@/components/signUp";
+import SignUp from "@/components/signup";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";

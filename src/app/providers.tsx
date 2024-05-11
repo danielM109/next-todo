@@ -10,7 +10,9 @@ interface ProvidersProps {
 export default function Providers({ children }: ProvidersProps) {
   return (
     // <SessionProvider>
-      <NextUIProvider>{children}</NextUIProvider>
+      <NextUIProvider>
+        {children}
+      </NextUIProvider>
     // </SessionProvider>
   );
 }
