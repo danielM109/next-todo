@@ -1,10 +1,10 @@
 'use client';
 
-import Input from "@/ui/input"; 
+import Input from "@/UI/Input"; 
 
 import { useFormState } from 'react-dom';
 import * as actions from '@/actions';
-import ImgFondo from "@/components/imgFondo";
+import ImgFondo from "@/components/ImgFondo";
 import { Select, SelectItem } from "@nextui-org/react";
 // import Header from "@/components/header";
 

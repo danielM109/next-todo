@@ -1,6 +1,6 @@
 import Link from 'next/link';
 // import {Button} from "@nextui-org/react";
-import {UserIcon} from '@/ui/userIcon';
+import {UserIcon} from '@/UI/userIcon';
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";

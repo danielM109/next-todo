@@ -2,12 +2,12 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "../../../lib/db";
-import ImgFondo from "@/components/imgFondo";
+import ImgFondo from "@/components/ImgFondo";
 
 import Link from 'next/link';
 import * as actions from '@/actions';
-import { EditIcon } from "@/ui/editIcon";
-import { DeleteIcon } from "@/ui/deleteIcon";
+import { EditIcon } from "@/UI/editIcon";
+import { DeleteIcon } from "@/UI/deleteIcon";
 // import {DeleteIcon} from "./DeleteIcon";
 // import {columns, users} from "./data";
 import {

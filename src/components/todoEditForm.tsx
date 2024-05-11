@@ -4,7 +4,7 @@
 // import Editor from '@monaco-editor/react';
 import { ChangeEvent, useState } from 'react';
 import * as actions from '@/actions';
-import Input from '@/ui/input';
+import Input from '@/UI/Input';
 // import { TodoProps } from '@/app/(header)/page';
 
 // interface TodolistEditFormProps {
