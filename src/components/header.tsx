@@ -1,6 +1,6 @@
 import Link from 'next/link';
 // import {Button} from "@nextui-org/react";
-import {UserIcon} from '@/UI/userIcon';
+import {UserIcon} from '@/UI/UserIcon';
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -11,7 +11,7 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from '@nextui-org/react';
-import Logout from './logout';
+import Logout from './Logout';
 
 export default async function Header() {
   const supabase = createServerComponentClient({ cookies });

@@ -6,8 +6,8 @@ import ImgFondo from "@/components/ImgFondo";
 
 import Link from 'next/link';
 import * as actions from '@/actions';
-import { EditIcon } from "@/UI/editIcon";
-import { DeleteIcon } from "@/UI/deleteIcon";
+import { EditIcon } from "@/UI/EditIcon";
+import { DeleteIcon } from "@/UI/DeleteIcon";
 // import {DeleteIcon} from "./DeleteIcon";
 // import {columns, users} from "./data";
 import {
